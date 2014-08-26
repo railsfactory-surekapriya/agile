@@ -1,0 +1,20 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+<h1>Your Nation Catalog</h1>
+<% cache ['store' , Nation.latest] do %>
+<% @nations.each do |nation| %>
+<% cache ['entry' , nation] do %>
+<div class="entry">
+<%= image_tag(nation.image_url) %>
+<h3><%= nation.country %></h3>
+<%= sanitize(nation.capital) %>
+<div class="population_line">
+<b>Population:<span class="population"><%= nation.population %></span></b>
+<br /> <b>Flag's Color:<span class="Flag_color"><%= nation.Flag_color %></span></b>
+<%= button_to 'Add to Cart', line_items_path(nation_id: nation),remote: true %>
+</div>
+</div>
+<% end %>
+<% end %>
+<% end %>

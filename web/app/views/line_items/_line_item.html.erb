@@ -1,0 +1,9 @@
+<% if line_item == @current_item %>
+ <tr id="current_item">
+ <% else %>
+<tr>
+<% end %>
+ <td><%= line_item.quantity %>&times;</td>
+ <td><%= line_item.nation.country %></td>
+ <td class="item_population"><%= line_item.total_population %></td>
+ </tr>
