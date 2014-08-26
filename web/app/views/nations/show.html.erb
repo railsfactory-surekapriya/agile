@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @nation.country %>
+</p>
+
+<p>
+  <strong>Flag color:</strong>
+  <%= @nation.Flag_color %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @nation.image_url %>
+</p>
+
+<p>
+  <strong>Capital:</strong>
+  <%= @nation.capital %>
+</p>
+
+<p>
+  <strong>Population:</strong>
+  <%= @nation.population %>
+</p>
+
+<%= link_to 'Edit', edit_nation_path(@nation) %> |
+<%= link_to 'Back', nations_path %>

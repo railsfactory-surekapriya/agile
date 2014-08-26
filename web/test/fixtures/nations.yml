@@ -1,0 +1,22 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  country: MyString
+  Flag_color: MyString
+  image_url: MyString
+  capital: MyString
+  population: 9.99
+
+two:
+  country: MyString
+  Flag_color: MyString
+  image_url: MyString
+  capital: MyString
+  population: 9.99
+
+england:
+  country: UK
+  Flag_color: blue star
+  capital: London
+  population: 10004050
+  image_url: uk_gif

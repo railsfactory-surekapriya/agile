@@ -1,0 +1,34 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>Listing nations</h1>
+<table>
+ 
+    <% @nations.each do |nation| %>
+      
+<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+<td>
+<%= image_tag(nation.image_url, class: 'list_image') %>
+</td>
+<td class="list_capital">
+<dl>
+<dt><%= nation.country %></dt> 
+<dd>Capital:<%= truncate(strip_tags(nation.capital), length: 50) %></dd>
+</dl>
+</td>
+<td>Population:<%= nation.population %></td>
+<td>flag's color:<%= nation.Flag_color %></td>
+<td class="list_actions">
+       
+        <%= link_to 'Show', nation %><br />
+        <%= link_to 'Edit', edit_nation_path(nation) %><br />
+        <%= link_to 'Destroy', nation, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Nation', new_nation_path %>
