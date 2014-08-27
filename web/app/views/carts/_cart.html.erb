@@ -1,5 +1,4 @@
-<% unless cart.line_items.empty? %>
-<div class="cart_country">Your Cart</div>
+<h2><%= t('.title') %></h2>
 <table>
 <%= render(cart.line_items) %>
 <tr class="total_line">
@@ -7,6 +6,7 @@
  <td class="total_cell"><%= cart.total_population %></td>
 </tr>
 </table>
- <%= button_to 'Empty cart', cart, method: :delete,
+<%= button_to t('.checkout'), new_order_path, method: :get %>
+ <%= button_to t('.empty'), cart, method: :delete,
 data: { confirm: 'Are you sure?' } %>
-<% end %>
+

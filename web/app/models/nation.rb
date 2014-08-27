@@ -1,4 +1,5 @@
 class Nation < ActiveRecord::Base
+has_many :orders, through: :line_items
 has_many :line_items
 before_destroy :ensure_not_referenced_by_any_line_item
 validates :country, :capital, :image_url, :population, :Flag_color,  presence: true
