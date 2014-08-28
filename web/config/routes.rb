@@ -7,13 +7,14 @@ delete 'logout' => :destroy
 end
 
  
-
+ get 'store/store'
+ get 'store/question' 
   get 'sessions/create'
 
   get 'sessions/destroy'
 
   resources :users
-
+ 
   resources :nations do
  get :who_bought, on: :member
  end

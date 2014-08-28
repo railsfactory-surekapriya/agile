@@ -6,7 +6,7 @@ fixtures :nations
 # they submit, an order is created containing their information, along with a
 # single line item corresponding to the nation they added to their cart.
 
-test "buying a nation" do
+test "buying a product" do
 LineItem.delete_all
 Order.delete_all
 england_book = nations(:england)
@@ -41,8 +41,8 @@ orders = Order.all
 assert_equal 1, orders.size
 order = orders[0]
 assert_equal "sureka", order.name
-assert_equal "surekapriya@railsfactory.org", order.address
-assert_equal "dave@example.com", order.email
+assert_equal "xxxx yyyy", order.address
+assert_equal "surekapriya@railsfactory.org", order.email
 assert_equal "Check", order.pay_type
 
 assert_equal 1, order.line_items.size
@@ -51,7 +51,7 @@ assert_equal england_book, line_item.nation
 
 mail = ActionMailer::Base.deliveries.last
 assert_equal ["surekapriya@railsfactory.org"], mail.to
-assert_equal 'Sam Ruby <depot@example.com>', mail[:from].value
+assert_equal 'sam ruby <depot@example.com>', mail[:from].value
 assert_equal "Pragmatic Store Order Confirmation", mail.subject
 end
 end

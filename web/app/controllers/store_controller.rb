@@ -9,4 +9,12 @@ if params[:set_locale]
   @nations = Nation.order(:country)
   end
 end
+def store
+
+end
+def question
+
+end
+
+
 end
